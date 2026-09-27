@@ -31,7 +31,7 @@ The production site is exported into `out/`. Pushes to `main` trigger the Pages 
 - Project cover compositions: `components/project-art.tsx`
 - Light, dark, and system preference: `components/theme-switch.tsx`
 
-Geist and Geist Mono variable fonts are self-hosted through Fontsource packages. The theme defaults to the device setting and persists an explicit choice in local storage. An early inline script applies the saved setting before the page paints; system changes and cross-tab preference changes are also supported.
+Nunito Sans is self-hosted through Fontsource, with rounded letterforms, relaxed tracking, and generous line spacing. The homepage prioritizes two visual case studies and two quieter project links instead of four equally dense cards. The theme defaults to the device setting and persists an explicit choice in local storage. An early inline script applies the saved setting before the page paints; system changes and cross-tab preference changes are also supported.
 
 The About page uses a finished monogram panel while awaiting a portrait. Replace the panel with an accessible image when supplied. Keep its 4:5 desktop footprint and mobile treatment.
 

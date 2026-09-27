@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
 import "./creative.css";
-import "@fontsource-variable/geist";
-import "@fontsource-variable/geist-mono";
+import "@fontsource-variable/nunito-sans";
 import { Navigation } from "@/components/navigation";
 import { MotionEffects } from '@/components/motion-effects';
 export const metadata: Metadata = {
