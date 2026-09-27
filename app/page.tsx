@@ -2,62 +2,52 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ContactBanner } from '@/components/shared';
 import { Icon } from '@/components/icons';
-import { InzerArt, CleanHausArt } from '@/components/project-art';
+import { CleanHausArt } from '@/components/project-art';
+import { StudioIllustration } from '@/components/studio-illustration';
+import { ProjectPeek } from '@/components/project-peek';
 
 export const metadata: Metadata = { alternates: { canonical: '/' } };
 
-const projects = [
-  { name: 'Inzer', slug: 'inzer', description: 'A gym experience that moves with its members.', kind: 'Web app', art: <InzerArt /> },
-  { name: 'CleanHaus', slug: 'cleanhaus', description: 'Keeping hosts, cleaners, and schedules in sync.', kind: 'Mobile & web', art: <CleanHausArt /> },
-];
-
 export default function Home() {
   return (
-    <main id="main">
-      <section className="intro wrap">
-        <span className="availability"><span className="status-dot" />Available for work</span>
-        <div className="hello-mark" aria-hidden="true"><i /><i /><b /></div>
-        <p className="intro-name">Hey, I’m Khalid.</p>
-        <h1>Useful apps.<br /><span className="highlight-word">A little delight.</span></h1>
-        <p className="intro-description">I build thoughtful web and mobile experiences<br className="desktop-break" /> with React Native, React, and Next.js.</p>
-        <div className="intro-actions">
-          <Link className="button primary" href="#work">Explore my work <span aria-hidden="true">↓</span></Link>
-          <Link className="text-link" href="/contact/">Say hello <span aria-hidden="true">↗</span></Link>
+    <main id="main" className="studio-home">
+      <section className="studio-hero wrap">
+        <div className="studio-introduction">
+          <span className="availability"><span className="status-dot" />Available for work</span>
+          <h1>Hey, I’m<br /><span className="name-underline">Khalid.</span><span className="hero-star" aria-hidden="true">✳</span></h1>
+          <p className="studio-role">Full-stack & React Native engineer.</p>
+          <p className="studio-summary">I turn complex ideas into thoughtful web & mobile apps. Built to work well. And feel a little wonderful.</p>
+          <div className="studio-actions"><Link className="button primary" href="#work">View my work <span aria-hidden="true">↓</span></Link><Link className="text-link" href="/contact/">Let’s talk <span aria-hidden="true">↗</span></Link></div>
         </div>
+        <StudioIllustration />
+        <div className="studio-footnote"><span>Based in Pakistan. Building beyond borders.</span><a href="#work">A little further down <span aria-hidden="true">↓</span></a></div>
       </section>
 
-      <section id="work" className="gallery wrap">
-        <div className="gallery-heading"><h2>A few things I’ve built<span aria-hidden="true">✳</span></h2><p>Made with teams. Built with care.</p></div>
-        <div className="work-gallery">
-          {projects.map(project => (
-            <Link className={`work-tile tile-${project.slug}`} href={`/work/${project.slug}/`} key={project.slug}>
-              <div className="tile-art">{project.art}<span className="tile-open" aria-hidden="true"><Icon name="arrow" /></span></div>
-              <div className="tile-caption"><h3>{project.name}</h3><span className="project-kind">{project.kind}</span></div>
-              <p className="tile-description">{project.description}</p>
-            </Link>
-          ))}
-        </div>
+      <section id="work" className="project-stories wrap">
+        <header className="stories-heading"><p className="eyebrow">SELECTED WORK</p><h2>Good ideas.<br /><span>Made real, together.</span></h2><p>A few products I’ve helped build at Datics AI.</p></header>
+        <article className="project-story story-inzer">
+          <div className="story-copy"><span className="story-index">01 / INZER</span><h3>From the first workout<br />to the next personal best.</h3><p>A gym platform that brings workouts, progress, and community into one mobile-friendly experience.</p><div className="story-contribution"><span>MY PART</span><p>I enhanced the React app, added installable PWA capabilities and offline support, and connected real-time updates.</p></div><Link className="story-link" href="/work/inzer/">Explore the Inzer story <Icon name="arrow" /></Link><small className="story-disclosure">Code-derived demo screens with fictional data.</small></div>
+          <ProjectPeek />
+        </article>
+        <article className="project-story story-cleanhaus">
+          <div className="cleanhaus-story-art"><CleanHausArt /><span className="shared-calendar-note">One calendar.<br /><strong>Three platforms.</strong><span aria-hidden="true">↗</span></span></div>
+          <div className="story-copy"><span className="story-index">02 / CLEANHAUS</span><h3>Less juggling.<br />More in sync.</h3><p>Helping rental hosts and cleaners coordinate the everyday details, across mobile and web.</p><div className="story-contribution"><span>MY PART</span><p>I built a shared calendar library for React Native, React, and Next.js, and worked on scheduling, onboarding, and mobile delivery.</p></div><Link className="story-link" href="/work/cleanhaus/">Explore the CleanHaus story <Icon name="arrow" /></Link><small className="story-disclosure">Product onboarding illustration.</small></div>
+        </article>
         <div className="more-work">
-          <Link href="/work/pv-rugs/"><span className="small-project-mark rugs-mark" aria-hidden="true">pv.</span><span><strong>PV Rugs</strong><small>Service workflows, connected.</small></span><Icon name="arrow" /></Link>
-          <Link href="/work/dealership-toolkit/"><span className="small-project-mark crm-mark" aria-hidden="true"><Icon name="layers" /></span><span><strong>Dealership Toolkit</strong><small>Real-time tools for busy teams.</small></span><Icon name="arrow" /></Link>
+          <Link href="/work/pv-rugs/"><span className="small-project-mark rugs-mark" aria-hidden="true">pv.</span><span><strong>PV Rugs</strong><small>QR tracking, payments & connected operations.</small></span><Icon name="arrow" /></Link>
+          <Link href="/work/dealership-toolkit/"><span className="small-project-mark crm-mark" aria-hidden="true"><Icon name="layers" /></span><span><strong>Dealership Toolkit</strong><small>Real-time dashboards & dependable backend jobs.</small></span><Icon name="arrow" /></Link>
         </div>
       </section>
 
       <section id="services" className="capabilities wrap">
-        <div className="capabilities-heading"><p className="eyebrow">HOW I CAN HELP</p><h2>Your idea.<br /><span>Let’s give it life.</span></h2><p>From the first tap to the systems behind it.</p></div>
-        <div className="capability-list">
-          {[
-            ['mobile', 'Apps that feel at home', 'React Native experiences for iOS and Android.'],
-            ['monitor', 'Websites with a purpose', 'Responsive React and Next.js products.'],
-            ['layers', 'The pieces behind the scenes', 'APIs, payments, and real-time connections.'],
-          ].map(([icon, title, copy]) => <article key={title}><span className="capability-icon"><Icon name={icon as 'mobile' | 'monitor' | 'layers'} /></span><div><h3>{title}</h3><p>{copy}</p></div></article>)}
-        </div>
+        <div className="capabilities-heading"><p className="eyebrow">FROM INTERFACE TO INFRASTRUCTURE</p><h2>The whole picture.<br /><span>The little details.</span></h2><p>One engineer who cares about how all the pieces fit.</p></div>
+        <div className="capability-list">{[
+          ['mobile', 'Made for mobile', 'React Native and Expo apps, from onboarding to app-store delivery.'],
+          ['monitor', 'Built for the web', 'React and Next.js experiences that work across screens.'],
+          ['layers', 'Connected underneath', 'Node.js, databases, APIs, payments, and real-time systems.'],
+        ].map(([icon, title, copy]) => <article key={title}><span className="capability-icon"><Icon name={icon as 'mobile' | 'monitor' | 'layers'} /></span><div><h3>{title}</h3><p>{copy}</p></div></article>)}</div>
       </section>
-
-      <section className="personal-note wrap">
-        <div className="note-monogram" aria-hidden="true">ks.</div>
-        <div><h2>A curious human behind the code.</h2><p>Based in Pakistan, building with teams everywhere. I’ve been working on web and mobile products at Datics AI since 2023.</p><Link className="text-link" href="/about/">A little more about me <span aria-hidden="true">↗</span></Link></div>
-      </section>
+      <section className="personal-note wrap"><div className="note-monogram" aria-hidden="true">ks.</div><div><p className="eyebrow">A PERSON BEHIND THE PIXELS</p><h2>Curiosity is part of the job.</h2><p>I’ve been building web and mobile products with the team at Datics AI since 2023. I like thoughtful details, clear conversations, and understanding why something needs to exist before deciding how to build it.</p><div className="personal-links"><Link className="text-link" href="/about/">More about me ↗</Link><Link className="text-link" href="/resume/">View résumé ↗</Link></div></div></section>
       <ContactBanner />
     </main>
   );

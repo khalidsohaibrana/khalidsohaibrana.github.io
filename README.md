@@ -31,7 +31,9 @@ The production site is exported into `out/`. Pushes to `main` trigger the Pages 
 - Project cover compositions: `components/project-art.tsx`
 - Light, dark, and system preference: `components/theme-switch.tsx`
 
-Nunito Sans is self-hosted through Fontsource, with rounded letterforms, relaxed tracking, and generous line spacing. The homepage prioritizes two visual case studies and two quieter project links instead of four equally dense cards. The theme defaults to the device setting and persists an explicit choice in local storage. An early inline script applies the saved setting before the page paints; system changes and cross-tab preference changes are also supported.
+Fraunces and Nunito Sans are self-hosted through Fontsource: expressive serif headings paired with relaxed, readable body text. The homepage prioritizes two spacious project stories and two quieter project links instead of four equally dense cards. `app/studio.css` contains the current editorial direction. The theme defaults to the device setting and persists an explicit choice in local storage. An early inline script applies the saved setting before the page paints; system changes and cross-tab preference changes are also supported.
+
+The original SVG developer-workspace illustration in `components/studio-illustration.tsx` has an accessible lamp toggle and theme-responsive day/night details. It is symbolic artwork, not a portrait or depiction of Khalid's actual workspace. Replace or complement it with an approved personal portrait later. `components/project-peek.tsx` provides three keyboard-accessible Inzer screen previews; the full seven-step walkthrough remains on its case-study page.
 
 The About page uses a finished monogram panel while awaiting a portrait. Replace the panel with an accessible image when supplied. Keep its 4:5 desktop footprint and mobile treatment.
 
@@ -43,7 +45,7 @@ Inzer screens and video are adapted, code-derived portfolio demonstrations with 
 
 The redesign takes presentation inspiration from the user's specific [AI Property Management App shot by Asib Iquebal](https://dribbble.com/shots/27761850-AI-Property-Management-App-Smart-Tenant-Maintenance-Assistant): paired mobile screens, soft mint and warm neutral canvases, rounded surfaces, and generous spacing. This refers to the artwork inside the shot, not Dribbble's website layout. No Dribbble artwork is embedded or copied. The portfolio's editorial layout and original project compositions are implemented in `app/creative.css` and `components/project-art.tsx`.
 
-Motion includes staggered introductory text, one-time section reveals, and responsive project-cover interactions. CSS and JavaScript both respect reduced-motion preferences. Content remains visible if JavaScript is unavailable.
+The personal studio direction also draws on Robb Owen's editorial personality, Brittany Chiang's clear positioning, and Xverse's product-focused presentation. All illustration and layout code is original; no reference-site assets were copied. Motion includes introductory reveals, one-time section reveals, and short screen transitions. CSS and JavaScript both respect reduced-motion preferences. Content remains visible if JavaScript is unavailable.
 
 ## Before updating claims
 
