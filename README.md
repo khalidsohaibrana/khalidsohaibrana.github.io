@@ -28,6 +28,10 @@ The production site is exported into `out/`. Pushes to `main` trigger the Pages 
 - Contact and availability: `app/contact/page.tsx`
 - Shared colors and responsive styles: `app/globals.css`
 - Inzer walkthrough: `components/journey.tsx`
+- Project cover compositions: `components/project-art.tsx`
+- Light, dark, and system preference: `components/theme-switch.tsx`
+
+Geist and Geist Mono variable fonts are self-hosted through Fontsource packages. The theme defaults to the device setting and persists an explicit choice in local storage. An early inline script applies the saved setting before the page paints; system changes and cross-tab preference changes are also supported.
 
 The About page uses a finished monogram panel while awaiting a portrait. Replace the panel with an accessible image when supplied. Keep its 4:5 desktop footprint and mobile treatment.
 
@@ -35,7 +39,11 @@ The contact form opens an email draft using the visitor's mail client. It does n
 
 ## Asset provenance
 
-Inzer screens and video are adapted, code-derived portfolio demonstrations with fictional sample data. They are not a live app or proof of backend functionality. The underlying client source code is not included. Project descriptions describe Khalid's team contributions at Datics AI, based on his provided résumé. Other project covers are typographic project summaries, not fabricated product screenshots. Client media is not licensed for third-party reuse.
+Inzer screens and video are adapted, code-derived portfolio demonstrations with fictional sample data. They are not a live app or proof of backend functionality. The underlying client source code is not included. Project descriptions describe Khalid's team contributions at Datics AI, based on his provided résumé. The CleanHaus gallery artwork is its supplied onboarding illustration (`assets/onboarding/welcome-stack/hero-1.png`), optimized for the website. CleanHaus detail, PV Rugs, and Dealership Toolkit diagrams describe architecture and workflows, not product screenshots. Client media is not licensed for third-party reuse.
+
+The redesign takes presentation inspiration from the user's specific [AI Property Management App shot by Asib Iquebal](https://dribbble.com/shots/27761850-AI-Property-Management-App-Smart-Tenant-Maintenance-Assistant): paired mobile screens, soft mint and warm neutral canvases, rounded surfaces, and generous spacing. This refers to the artwork inside the shot, not Dribbble's website layout. No Dribbble artwork is embedded or copied. The portfolio's editorial layout and original project compositions are implemented in `app/creative.css` and `components/project-art.tsx`.
+
+Motion includes staggered introductory text, one-time section reveals, and responsive project-cover interactions. CSS and JavaScript both respect reduced-motion preferences. Content remains visible if JavaScript is unavailable.
 
 ## Before updating claims
 

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { projects, type ProjectSlug } from "@/lib/projects";
 import { ContactBanner, Phones } from "@/components/shared";
 import { Journey } from "@/components/journey";
+import { CalendarArt, WorkflowArt } from "@/components/project-art";
 export function generateStaticParams() {
   return Object.keys(projects).map((slug) => ({ slug }));
 }
@@ -72,6 +73,14 @@ export default async function Project({
               Mobile web / PWA. Adapted screens with sample data.
             </p>
           </>
+        ) : slug === "cleanhaus" ? (
+          <div className="case-art">
+            <CalendarArt />
+          </div>
+        ) : slug === "pv-rugs" ? (
+          <div className="case-art">
+            <WorkflowArt />
+          </div>
         ) : (
           <div
             className={`editorial-cover ${slug === "cleanhaus" ? "cleanhaus" : slug === "pv-rugs" ? "pvrugs" : "toolkit-cover"}`}
