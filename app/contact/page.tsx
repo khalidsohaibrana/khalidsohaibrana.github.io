@@ -4,7 +4,7 @@ import { upwork } from "@/components/shared";
 export const metadata: Metadata = {
   title: "Let’s work together",
   description:
-    "Discuss your web or mobile project with Khalid Sohaib. Available for freelance work, 40 hours per week.",
+    "Discuss your web or mobile project with Khalid Sohaib. Available for work, 40 hours per week.",
   alternates: { canonical: "/contact/" },
 };
 export default function Contact() {
@@ -30,7 +30,7 @@ export default function Contact() {
           <div className="contact-detail">
             <span className="eyebrow">AVAILABILITY</span>
             <p>
-              40 hours per week for freelance projects.
+              Available for work, 40 hours per week.
               <br />
               Based in Pakistan (UTC+5), working remotely.
             </p>

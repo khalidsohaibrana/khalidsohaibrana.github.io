@@ -1,263 +1,57 @@
-import Link from "next/link";
-import { ContactBanner, Phones } from "@/components/shared";
+import Link from 'next/link';
+import type { Metadata } from 'next';
+import { ContactBanner } from '@/components/shared';
+import { Icon } from '@/components/icons';
+import { CleanHausArt } from '@/components/project-art';
+import { StudioIllustration } from '@/components/studio-illustration';
+import { ProjectPeek } from '@/components/project-peek';
+import { DealershipArt } from '@/components/platform-story';
+
+export const metadata: Metadata = { alternates: { canonical: '/' } };
+
 export default function Home() {
   return (
-    <main id="main">
-      <section className="hero wrap">
-        <div className="hero-top">
-          <p className="eyebrow">FULL STACK & REACT NATIVE ENGINEER</p>
-          <p className="availability">
-            <span /> Open for freelance · 40 hrs/week
-          </p>
+    <main id="main" className="studio-home">
+      <section className="studio-hero wrap">
+        <div className="studio-introduction">
+          <span className="availability"><span className="status-dot" />Available for work</span>
+          <h1>Hey, I’m<br /><span className="name-underline">Khalid.</span><span className="hero-star" aria-hidden="true">✳</span></h1>
+          <p className="studio-role">Full-stack & React Native engineer.</p>
+          <p className="studio-summary">I turn complex ideas into thoughtful web & mobile apps. Built to work well. And feel a little wonderful.</p>
+          <div className="studio-actions"><Link className="button primary" href="#work">View my work <span aria-hidden="true">↓</span></Link><Link className="text-link" href="/contact/">Let’s talk <span aria-hidden="true">↗</span></Link></div>
         </div>
-        <h1>
-          Good ideas.
-          <br />
-          Great <span className="serif blue">digital products.</span>
-        </h1>
-        <div className="hero-bottom">
-          <p>
-            I’m Khalid. I turn complex requirements into
-            <br className="desktop-break" /> web and mobile experiences people
-            enjoy using.
-          </p>
-          <Link className="button primary" href="#work">
-            Explore my work <span aria-hidden="true">↘</span>
-          </Link>
-        </div>
-        <div className="hero-foot">
-          <div className="stack-line">
-            <span>React Native</span>
-            <span>React</span>
-            <span>Next.js</span>
-            <span>Node.js</span>
-            <span>TypeScript</span>
-          </div>
-          <span className="mono">BASED IN PAKISTAN · WORKING REMOTELY</span>
+        <StudioIllustration />
+        <div className="studio-footnote"><span>Based in Pakistan. Building beyond borders.</span><a href="#work">A little further down <span aria-hidden="true">↓</span></a></div>
+      </section>
+
+      <section id="work" className="project-stories wrap">
+        <header className="stories-heading"><p className="eyebrow">SELECTED WORK</p><h2>Good ideas.<br /><span>Made real, together.</span></h2><p>A few products I’ve helped build at Datics AI.</p></header>
+        <article className="project-story story-inzer">
+          <div className="story-copy"><span className="story-index">01 / INZER</span><h3>From the first workout<br />to the next personal best.</h3><p>A gym platform that brings workouts, progress, and community into one mobile-friendly experience.</p><div className="story-contribution"><span>MY PART</span><p>I enhanced the React app, added installable PWA capabilities and offline support, and connected real-time updates.</p></div><Link className="story-link" href="/work/inzer/">Explore the Inzer story <Icon name="arrow" /></Link><small className="story-disclosure">Code-derived demo screens with fictional data.</small></div>
+          <ProjectPeek />
+        </article>
+        <article className="project-story story-cleanhaus">
+          <div className="cleanhaus-story-art"><CleanHausArt /><span className="shared-calendar-note">One calendar.<br /><strong>Three platforms.</strong><span aria-hidden="true">↗</span></span></div>
+          <div className="story-copy"><span className="story-index">02 / CLEANHAUS</span><h3>Less juggling.<br />More in sync.</h3><p>Helping rental hosts and cleaners coordinate the everyday details, across mobile and web.</p><div className="story-contribution"><span>MY PART</span><p>I built a shared calendar library for React Native, React, and Next.js, and worked on scheduling, onboarding, and mobile delivery.</p></div><Link className="story-link" href="/work/cleanhaus/">Explore the CleanHaus story <Icon name="arrow" /></Link><small className="story-disclosure">Product onboarding illustration.</small></div>
+        </article>
+        <article className="project-story story-toolkit">
+          <div className="story-copy"><span className="story-index">03 / DEALERSHIP TOOLKIT</span><h3>Every shopper.<br />Every screen.</h3><p>A multi-tenant dealership platform where staff work the same leads, appointments, and campaigns from a web dashboard or a phone.</p><div className="story-contribution"><span>MY PART</span><p>I built React Native screens for the mobile client and React dashboards for the web, sharing one role-based permission model, and backed them with queue-driven background jobs.</p></div><Link className="story-link" href="/work/dealership-toolkit/">Explore the Dealership Toolkit story <Icon name="arrow" /></Link><small className="story-disclosure">Real app screens captured with fictional data; client branding replaced.</small></div>
+          <DealershipArt />
+        </article>
+        <div className="more-work">
+          <Link href="/work/pv-rugs/"><span className="small-project-mark rugs-mark" aria-hidden="true">pv.</span><span><strong>PV Rugs</strong><small>QR tracking, payments & connected operations.</small></span><Icon name="arrow" /></Link>
         </div>
       </section>
-      <section id="work" className="work wrap">
-        <div className="section-heading">
-          <div>
-            <p className="eyebrow">01 / SELECTED WORK</p>
-            <h2>
-              Real products.
-              <br />
-              <span className="serif">Thoughtful engineering.</span>
-            </h2>
-          </div>
-          <p>
-            From the first interaction to the systems
-            <br /> working quietly behind the scenes.
-          </p>
-        </div>
-        <Link className="featured-project" href="/work/inzer/">
-          <div className="featured-visual">
-            <div className="project-visual-label">
-              <span>INZER</span>
-              <span>TRAIN. TRACK. CONNECT.</span>
-            </div>
-            <Phones />
-            <div className="visual-bottom">
-              <span>THE GYM, IN YOUR POCKET.</span>
-              <span className="round-arrow">↗</span>
-            </div>
-          </div>
-          <div className="project-info">
-            <div>
-              <p className="eyebrow">FEATURED CASE STUDY / WEB + PWA</p>
-              <h3>Inzer — a more connected gym experience.</h3>
-              <p>
-                Workout tracking, member journeys, and an installable app that
-                keeps up with life outside the gym.
-              </p>
-            </div>
-            <span className="text-link">View case study ↗</span>
-          </div>
-        </Link>
-        <div className="project-grid">
-          <Link className="project-card" href="/work/cleanhaus/">
-            <div className="project-cover cleanhaus">
-              <div className="cover-top">
-                <span>CleanHaus</span>
-                <span>01 / OPERATIONS</span>
-              </div>
-              <h3>
-                One calendar.
-                <br />
-                <span>Three platforms.</span>
-              </h3>
-              <div className="platforms">
-                <span>Mobile</span>
-                <i>↔</i>
-                <span>Web</span>
-                <i>↔</i>
-                <span>Enterprise</span>
-              </div>
-              <p>Shared scheduling infrastructure</p>
-              <span className="round-arrow">↗</span>
-            </div>
-            <div className="card-caption">
-              <h3>CleanHaus</h3>
-              <p>React Native · React · Next.js</p>
-            </div>
-            <p className="card-summary">
-              Helping hosts and cleaners stay in sync across mobile and web.
-            </p>
-          </Link>
-          <Link className="project-card" href="/work/pv-rugs/">
-            <div className="project-cover pvrugs">
-              <div className="cover-top">
-                <span>PV Rugs</span>
-                <span>02 / SERVICE OPERATIONS</span>
-              </div>
-              <h3>
-                From collection
-                <br />
-                <span>to completion.</span>
-              </h3>
-              <div className="lifecycle">
-                <span>Scan</span>
-                <b>→</b>
-                <span>Track</span>
-                <b>→</b>
-                <span>Deliver</span>
-              </div>
-              <p>A connected service lifecycle</p>
-              <span className="round-arrow">↗</span>
-            </div>
-            <div className="card-caption">
-              <h3>PV Rugs</h3>
-              <p>Next.js · Stripe · Twilio</p>
-            </div>
-            <p className="card-summary">
-              Turning service jobs, payments, and updates into one connected
-              workflow.
-            </p>
-          </Link>
-        </div>
-        <Link className="confidential-project" href="/work/dealership-toolkit/">
-          <span className="mono">ALSO IN MY TOOLKIT</span>
-          <div>
-            <h3>Real-time dealership CRM</h3>
-            <p>
-              Role-based dashboards, background jobs, and communication
-              workflows.
-            </p>
-          </div>
-          <span className="text-link">Explore the engineering ↗</span>
-        </Link>
+
+      <section id="services" className="capabilities wrap">
+        <div className="capabilities-heading"><p className="eyebrow">FROM INTERFACE TO INFRASTRUCTURE</p><h2>The whole picture.<br /><span>The little details.</span></h2><p>One engineer who cares about how all the pieces fit.</p></div>
+        <div className="capability-list">{[
+          ['mobile', 'Made for mobile', 'React Native and Expo apps, from onboarding to app-store delivery.'],
+          ['monitor', 'Built for the web', 'React and Next.js experiences that work across screens.'],
+          ['layers', 'Connected underneath', 'Node.js, databases, APIs, payments, and real-time systems.'],
+        ].map(([icon, title, copy]) => <article key={title}><span className="capability-icon"><Icon name={icon as 'mobile' | 'monitor' | 'layers'} /></span><div><h3>{title}</h3><p>{copy}</p></div></article>)}</div>
       </section>
-      <section id="services" className="services">
-        <div className="wrap">
-          <div className="section-heading">
-            <div>
-              <p className="eyebrow">02 / HOW I CAN HELP</p>
-              <h2>
-                Your product.
-                <br />
-                <span className="serif">My next challenge.</span>
-              </h2>
-            </div>
-            <p>
-              Joining your team or owning a feature,
-              <br /> from the first conversation to release.
-            </p>
-          </div>
-          <div className="service-grid">
-            {[
-              [
-                "01",
-                "Web & SaaS applications",
-                "Customer-facing products, admin dashboards, and business tools built with React and Next.js.",
-                "React / Next.js / TypeScript",
-              ],
-              [
-                "02",
-                "Cross-platform mobile",
-                "React Native apps with native integrations, offline experiences, and a dependable path to the app stores.",
-                "React Native / Expo / EAS",
-              ],
-              [
-                "03",
-                "Backends & integrations",
-                "APIs, payments, notifications, and real-time workflows that make your product useful end to end.",
-                "Node.js / PostgreSQL / Socket.io",
-              ],
-              [
-                "04",
-                "Make an existing app better",
-                "Untangle a codebase, improve performance, modernize screens, and ship the features your users need.",
-                "Audits / Refactoring / Delivery",
-              ],
-            ].map(([n, title, description, tech]) => (
-              <article className="service" key={n}>
-                <span className="service-number">{n}</span>
-                <h3>{title}</h3>
-                <p>{description}</p>
-                <span className="mono">{tech}</span>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="about-preview wrap">
-        <div>
-          <p className="eyebrow">03 / THE PERSON BEHIND THE PRODUCTS</p>
-          <h2>
-            A builder’s mindset.
-            <br />
-            <span className="serif">A teammate’s approach.</span>
-          </h2>
-        </div>
-        <div>
-          <p>
-            I’m a full-stack engineer at Datics AI, working across mobile apps,
-            SaaS platforms, and the systems that connect them.
-          </p>
-          <p>
-            I care about the details users notice—and the architecture they
-            don’t. Clear communication, thoughtful code, and steady delivery are
-            how I work.
-          </p>
-          <Link className="text-link" href="/about/">
-            A little more about me ↗
-          </Link>
-        </div>
-      </section>
-      <section className="process wrap">
-        <p className="eyebrow">A CLEAR PATH FROM IDEA TO RELEASE</p>
-        <div className="process-grid">
-          {[
-            [
-              "01",
-              "Understand",
-              "Align on your users, codebase, and the outcome that matters.",
-            ],
-            [
-              "02",
-              "Build",
-              "Ship visible milestones with clear decisions and regular updates.",
-            ],
-            [
-              "03",
-              "Refine",
-              "Test the important flows and polish the experience on real devices.",
-            ],
-            [
-              "04",
-              "Deliver",
-              "Release with practical documentation and a clean handover.",
-            ],
-          ].map(([n, t, d]) => (
-            <div key={n}>
-              <span className="mono">{n}</span>
-              <h3>{t}</h3>
-              <p>{d}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <section className="personal-note wrap"><div className="note-monogram" aria-hidden="true">ks.</div><div><p className="eyebrow">A PERSON BEHIND THE PIXELS</p><h2>Curiosity is part of the job.</h2><p>I’ve been building web and mobile products with the team at Datics AI since 2023. I like thoughtful details, clear conversations, and understanding why something needs to exist before deciding how to build it.</p><div className="personal-links"><Link className="text-link" href="/about/">More about me ↗</Link><Link className="text-link" href="/resume/">View résumé ↗</Link></div></div></section>
       <ContactBanner />
     </main>
   );
