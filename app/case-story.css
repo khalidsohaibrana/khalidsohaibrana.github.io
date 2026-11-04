@@ -1,0 +1,155 @@
+/* Dealership Toolkit case study: image hero + three-beat product story.
+   Real app captures, so the layout stays quiet and lets the screens speak. */
+
+.case-shot-hero {
+  border-radius: 14px;
+  overflow: hidden;
+  background: #0f1621;
+  border: 1px solid var(--line);
+  line-height: 0;
+}
+.case-shot-hero img {
+  width: 100%;
+  height: auto;
+}
+
+.case-story {
+  margin-block: 70px 20px;
+}
+.story-beat {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+.story-beat:nth-child(even) .beat-copy {
+  order: 2;
+}
+.beat-copy h3 {
+  font-size: clamp(25px, 2.4vw, 32px);
+  line-height: 1.25;
+  margin: 14px 0 16px;
+}
+.beat-copy > p {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.8;
+  max-width: 48ch;
+}
+.beat-surface {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 12px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 5px 12px;
+}
+.beat-shot {
+  margin: 0;
+  line-height: 0;
+}
+.beat-shot img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 40px #0a0f1724;
+}
+
+/* The mobile capture is portrait — keep it phone-sized instead of letting it
+   stretch to the full column width. */
+.story-beat.is-portrait .beat-shot img {
+  width: auto;
+  max-width: 100%;
+  max-height: 560px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 22px;
+}
+
+@media (max-width: 860px) {
+  .story-beat,
+  .story-beat:nth-child(even) .beat-copy {
+    grid-template-columns: 1fr;
+    order: 0;
+    gap: 24px;
+    margin-bottom: 55px;
+  }
+  .case-story {
+    margin-block: 45px 10px;
+  }
+  .story-beat.is-portrait .beat-shot img {
+    max-height: 460px;
+  }
+}
+
+/* Homepage: Dealership Toolkit story art — web screen with the phone on top.
+   Mirrors the footprint of .cleanhaus-story-art so the stories stay aligned. */
+.toolkit-story-art {
+  height: 525px;
+  background: #101822;
+  border-radius: 28px 100px 28px 28px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.toolkit-title {
+  position: absolute;
+  top: 36px;
+  left: 32px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9fb0c4;
+}
+.toolkit-title strong {
+  font-family: var(--display);
+  font-size: 32px;
+  font-weight: 480;
+  letter-spacing: -0.03em;
+  text-transform: none;
+  color: #fff;
+}
+.toolkit-web {
+  position: absolute;
+  top: 150px;
+  left: 30px;
+  width: 86%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 24px 50px #00000055;
+}
+.toolkit-phone {
+  position: absolute;
+  right: 26px;
+  bottom: -46px;
+  width: 142px;
+  height: auto;
+  border-radius: 18px;
+  border: 3px solid #1b2634;
+  box-shadow: 0 20px 40px #00000066;
+}
+
+@media (max-width: 1040px) {
+  .toolkit-story-art { height: 510px; }
+  .toolkit-title strong { font-size: 28px; }
+}
+@media (max-width: 860px) {
+  .toolkit-story-art { width: 100%; max-width: 520px; margin-inline: auto; }
+  .story-toolkit .story-copy { grid-row: 1; }
+}
+@media (max-width: 560px) {
+  .toolkit-story-art { height: 430px; border-radius: 23px 65px 23px 23px; }
+  .toolkit-title { left: 25px; }
+  .toolkit-title strong { font-size: 27px; }
+  .toolkit-web { top: 135px; left: 20px; }
+  .toolkit-phone { width: 112px; right: 18px; }
+}
