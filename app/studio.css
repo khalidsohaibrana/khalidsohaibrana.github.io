@@ -130,3 +130,25 @@ h1,h2,.project-story h3 { font-family:var(--display); font-weight:460; font-vari
  .personal-note h2 { font-size:31px; }
 }
 @media(prefers-reduced-motion:reduce) { .studio-home *, .studio-home *::before, .studio-home *::after { animation:none!important; transition:none!important; } }
+
+/* Final reading scale: display type for emphasis, sans for sustained reading. */
+body { font-size:17px; line-height:1.75; }
+h1,h2,.project-story h3 { letter-spacing:-.025em; font-weight:430; font-optical-sizing:auto; }
+.studio-introduction h1 { font-size:clamp(64px,6.5vw,90px); line-height:1.08; }
+.stories-heading h2 { font-size:clamp(35px,3.8vw,50px); line-height:1.22; }
+.story-copy h3 { font-size:clamp(30px,2.7vw,37px); line-height:1.28; }
+.story-copy>p,.story-contribution p { font-size:17px; line-height:1.8; }
+.story-index,.eyebrow,.story-contribution>span { font-size:12px; letter-spacing:.07em; }
+.story-disclosure,.studio-footnote,.studio-figure figcaption,.lamp-switch { font-size:13px; }
+.story-link,.studio-actions .button { font-size:16px; }
+.peek-caption,.peek-controls>button { font-size:14px; }
+.peek-top>span:last-child { font-size:10px; letter-spacing:.04em; }
+.page-hero h1 { font-size:clamp(35px,4vw,54px); line-height:1.22; }
+.page-hero .intro { font-size:18px; line-height:1.8; text-align:left; }
+.case-section h2 { font-family:var(--sans); font-size:24px; font-weight:700; letter-spacing:-.02em; }
+.case-section p,.case-section li { font-size:17px; line-height:1.8; max-width:65ch; }
+.case-note,.case-section p.case-note { font-size:13px; }
+.capabilities-heading h2 { font-size:clamp(33px,3.6vw,46px); }
+.personal-note h2 { font-size:32px; }
+@media(max-width:760px) { .studio-introduction h1 { font-size:clamp(60px,11vw,80px); }.story-copy h3 { font-size:33px; }.studio-summary,.story-copy>p,.story-contribution p { font-size:16px; }.stories-heading h2 { font-size:38px; }.studio-figure figcaption { font-size:12px; } }
+@media(max-width:440px) { .studio-introduction h1 { font-size:64px; }.hero-star { font-size:34px; padding-top:14px; }.story-copy h3 { font-size:30px; }.stories-heading h2 { font-size:35px; }.peek-top>span:last-child { font-size:9px; }.story-link { font-size:15px; }.page-hero h1 { font-size:35px; }.personal-note h2 { font-size:29px; } }

@@ -5,6 +5,7 @@ import "./creative.css";
 import "@fontsource-variable/nunito-sans";
 import "@fontsource-variable/fraunces";
 import "./studio.css";
+import "./walkthrough.css";
 import { Navigation } from "@/components/navigation";
 import { MotionEffects } from '@/components/motion-effects';
 export const metadata: Metadata = {

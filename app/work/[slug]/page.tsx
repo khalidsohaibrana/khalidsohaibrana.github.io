@@ -5,6 +5,7 @@ import { projects, type ProjectSlug } from "@/lib/projects";
 import { ContactBanner, Phones } from "@/components/shared";
 import { Journey } from "@/components/journey";
 import { CalendarArt, WorkflowArt } from "@/components/project-art";
+import { SourceWalkthrough } from "@/components/source-walkthrough";
 export function generateStaticParams() {
   return Object.keys(projects).map((slug) => ({ slug }));
 }
@@ -91,6 +92,8 @@ export default async function Project({
           </div>
         )}
         <div className="case-body">
+          {slug === "cleanhaus" && <SourceWalkthrough project="cleanhaus" />}
+          {slug === "dealership-toolkit" && <SourceWalkthrough project="dealership" />}
           <section className="case-section">
             <h2>The product</h2>
             <div>
