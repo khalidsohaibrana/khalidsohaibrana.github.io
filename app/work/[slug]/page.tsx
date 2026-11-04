@@ -6,6 +6,7 @@ import { ContactBanner, Phones } from "@/components/shared";
 import { Journey } from "@/components/journey";
 import { CalendarArt, WorkflowArt } from "@/components/project-art";
 import { SourceWalkthrough } from "@/components/source-walkthrough";
+import { PlatformStory } from "@/components/platform-story";
 export function generateStaticParams() {
   return Object.keys(projects).map((slug) => ({ slug }));
 }
@@ -82,9 +83,18 @@ export default async function Project({
           <div className="case-art">
             <WorkflowArt />
           </div>
+        ) : slug === "dealership-toolkit" ? (
+          <div className="case-shot-hero">
+            <img
+              src="/images/dealership-toolkit/web-dashboard.webp"
+              alt="Visitor analytics dashboard with lead and engagement counters"
+              width="1456"
+              height="816"
+            />
+          </div>
         ) : (
           <div
-            className={`editorial-cover ${slug === "cleanhaus" ? "cleanhaus" : slug === "pv-rugs" ? "pvrugs" : "toolkit-cover"}`}
+            className={`editorial-cover ${slug === "cleanhaus" ? "cleanhaus" : "pvrugs"}`}
           >
             <p className="eyebrow">{p.name.toUpperCase()}</p>
             <h2>{p.cover}</h2>
@@ -93,13 +103,13 @@ export default async function Project({
         )}
         <div className="case-body">
           {slug === "cleanhaus" && <SourceWalkthrough project="cleanhaus" />}
-          {slug === "dealership-toolkit" && <SourceWalkthrough project="dealership" />}
           <section className="case-section">
             <h2>The product</h2>
             <div>
               <p>{p.context}</p>
             </div>
           </section>
+          {slug === "dealership-toolkit" && <PlatformStory />}
           <section className="case-section">
             <h2>The challenge</h2>
             <div>

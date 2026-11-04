@@ -1,0 +1,88 @@
+/* Dealership Toolkit case study: image hero + three-beat product story.
+   Real app captures, so the layout stays quiet and lets the screens speak. */
+
+.case-shot-hero {
+  border-radius: 14px;
+  overflow: hidden;
+  background: #0f1621;
+  border: 1px solid var(--line);
+  line-height: 0;
+}
+.case-shot-hero img {
+  width: 100%;
+  height: auto;
+}
+
+.case-story {
+  margin-block: 70px 20px;
+}
+.story-beat {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+.story-beat:nth-child(even) .beat-copy {
+  order: 2;
+}
+.beat-copy h3 {
+  font-size: clamp(25px, 2.4vw, 32px);
+  line-height: 1.25;
+  margin: 14px 0 16px;
+}
+.beat-copy > p {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.8;
+  max-width: 48ch;
+}
+.beat-surface {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 12px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 5px 12px;
+}
+.beat-shot {
+  margin: 0;
+  line-height: 0;
+}
+.beat-shot img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 40px #0a0f1724;
+}
+
+/* The mobile capture is portrait — keep it phone-sized instead of letting it
+   stretch to the full column width. */
+.story-beat.is-portrait .beat-shot img {
+  width: auto;
+  max-width: 100%;
+  max-height: 560px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 22px;
+}
+
+@media (max-width: 860px) {
+  .story-beat,
+  .story-beat:nth-child(even) .beat-copy {
+    grid-template-columns: 1fr;
+    order: 0;
+    gap: 24px;
+    margin-bottom: 55px;
+  }
+  .case-story {
+    margin-block: 45px 10px;
+  }
+  .story-beat.is-portrait .beat-shot img {
+    max-height: 460px;
+  }
+}

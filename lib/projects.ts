@@ -85,9 +85,9 @@ export const projects = {
     category: "B2B CRM / ANONYMIZED PROJECT",
     title: "Real-time coordination for a busy dealership.",
     summary:
-      "Multi-role dashboards, lead and appointment updates, and dependable background communication workflows.",
-    role: "Full-stack development",
-    stack: "React · Node.js · PostgreSQL · Socket.io · Redis · Bull",
+      "Multi-role dashboards on web and mobile, lead and appointment updates, and dependable background communication workflows.",
+    role: "Full-stack & React Native development",
+    stack: "React Native · React · Node.js · PostgreSQL · Socket.io · Redis · Bull",
     cover: "The right update. To the right team.",
     context:
       "This B2B dealership CRM supports users with different responsibilities and access levels. Lead and appointment activity needs to reach the right people promptly, while communication jobs need reliable processing. Client details are intentionally anonymized.",
