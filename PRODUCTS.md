@@ -1,8 +1,12 @@
 # Products
 
-Reference notes on the products behind the case studies — what each one *is*
-as a product, not just what I did on it. Useful when writing portfolio copy,
+Reference notes on the products I've worked on — what each one *is* as a
+product, not just what I did on it. Useful when writing portfolio copy,
 answering interview questions, or deciding what a case study should emphasise.
+
+These are product notes, named as the vendors name themselves. The public case
+studies on the site are written separately and some are presented anonymised;
+this file is not a key to them.
 
 **How this is sourced.** Everything here comes from (a) each vendor's own
 public marketing, linked at the end of each section, (b) technology already
@@ -13,8 +17,6 @@ from private repositories or client documentation.
 ---
 
 ## STEALTH CDXP — Coast Technology
-
-*Portfolio case study: "Dealership Toolkit" (presented anonymised).*
 
 A multi-tenant AI marketing and customer-data platform for dealerships. Its
 core claim is identity resolution: de-anonymising **40–60% of a dealer's
