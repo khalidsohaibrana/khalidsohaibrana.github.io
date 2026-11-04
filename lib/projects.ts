@@ -82,30 +82,31 @@ export const projects = {
   },
   "dealership-toolkit": {
     name: "Dealership Toolkit",
-    category: "B2B CRM / ANONYMIZED PROJECT",
-    title: "Real-time coordination for a busy dealership.",
+    category: "B2B SAAS PLATFORM / ANONYMIZED PROJECT",
+    title: "One platform. Every surface.",
     summary:
-      "Multi-role dashboards on web and mobile, lead and appointment updates, and dependable background communication workflows.",
+      "A multi-tenant SaaS platform for dealership groups — visitor intelligence, leads, appointments, service and campaign automation — used from a web dashboard or a phone, and kept running by a background job engine.",
     role: "Full-stack & React Native development",
     stack: "React Native · React · Node.js · PostgreSQL · Socket.io · Redis · Bull",
-    cover: "The right update. To the right team.",
+    cover: "One platform. Every surface.",
     context:
-      "This B2B dealership CRM supports users with different responsibilities and access levels. Lead and appointment activity needs to reach the right people promptly, while communication jobs need reliable processing. Client details are intentionally anonymized.",
+      "Dealership groups use this platform as separate tenants, each with their own users, their own data and only the modules they have been given. The product spans visitor intelligence, lead management, appointments, service tracking, campaign automation and reporting, with staff working the same records from a web dashboard or a mobile app while imports, scheduled sends and third-party synchronization run continuously in the background. Client and vendor details are intentionally anonymized.",
     contributions: [
-      "Developed React dashboards with granular role-based access control.",
-      "Implemented Socket.io rooms for lead and appointment activity updates.",
-      "Built scheduled and background processing with Bull queues and Redis-backed workers.",
-      "Integrated Twilio SMS and Mailgun email into automated communication workflows.",
+      "Built React Native screens for the mobile client — dashboards, lead and appointment workflows, and charting — on React Native 0.73 with the New Architecture enabled.",
+      "Implemented mobile navigation, server-state caching and persisted storage using React Navigation, TanStack Query and MMKV, with English and French localization.",
+      "Developed React dashboards wired to the platform's tenant-aware role and permission model.",
+      "Implemented Socket.io rooms so lead and appointment activity reached only the users it concerned.",
+      "Built scheduled and background processing on Redis-backed Bull queues, and integrated Twilio SMS and Mailgun email into automated communication workflows.",
       "Optimized Node.js and PostgreSQL APIs for large datasets.",
     ],
     challenge:
-      "Keep interactive dashboards current while processing communication and scheduled work reliably in the background.",
+      "Keep one product coherent across a web dashboard, a mobile client and a continuously running job engine — while every tenant sees only their own data and only the modules they are entitled to.",
     approach:
-      "I used Socket.io rooms for targeted interface updates and Bull with Redis for job scheduling and coordination. I also optimized API queries to improve responsiveness on larger datasets.",
+      "Both clients derive their navigation and visible actions from the same feature, group and permission contract, so an entitlement change takes effect on web and mobile without a client release. Interactive updates go through Socket.io rooms, while anything slow or scheduled moves onto Bull queues to keep the request path responsive. On mobile I leaned on cached server state and persisted storage so screens stay usable on unreliable connections.",
     outcome:
-      "API optimization reduced average query latency by more than 50%, as recorded in my project experience. Targeted real-time updates and queued work supported the broader operational workflow.",
+      "API optimization reduced average query latency by more than 50%, as recorded in my project experience. Sharing one permission contract let the mobile client cover the same modules as the web dashboard, and queued processing kept imports and communication work off the request path.",
     lessons:
-      "Real-time messaging and background jobs solve different problems. Giving each a clear responsibility made the system easier to reason about and maintain.",
+      "Real-time messaging and background jobs solve different problems, and so do web and mobile clients. Giving each a clear responsibility — while sharing one permission contract between them — kept the platform straightforward to extend as modules were added.",
   },
 } as const;
 export type ProjectSlug = keyof typeof projects;

@@ -5,6 +5,7 @@ import { Icon } from '@/components/icons';
 import { CleanHausArt } from '@/components/project-art';
 import { StudioIllustration } from '@/components/studio-illustration';
 import { ProjectPeek } from '@/components/project-peek';
+import { DealershipArt } from '@/components/platform-story';
 
 export const metadata: Metadata = { alternates: { canonical: '/' } };
 
@@ -33,9 +34,12 @@ export default function Home() {
           <div className="cleanhaus-story-art"><CleanHausArt /><span className="shared-calendar-note">One calendar.<br /><strong>Three platforms.</strong><span aria-hidden="true">↗</span></span></div>
           <div className="story-copy"><span className="story-index">02 / CLEANHAUS</span><h3>Less juggling.<br />More in sync.</h3><p>Helping rental hosts and cleaners coordinate the everyday details, across mobile and web.</p><div className="story-contribution"><span>MY PART</span><p>I built a shared calendar library for React Native, React, and Next.js, and worked on scheduling, onboarding, and mobile delivery.</p></div><Link className="story-link" href="/work/cleanhaus/">Explore the CleanHaus story <Icon name="arrow" /></Link><small className="story-disclosure">Product onboarding illustration.</small></div>
         </article>
+        <article className="project-story story-toolkit">
+          <div className="story-copy"><span className="story-index">03 / DEALERSHIP TOOLKIT</span><h3>Every shopper.<br />Every screen.</h3><p>A multi-tenant dealership platform where staff work the same leads, appointments, and campaigns from a web dashboard or a phone.</p><div className="story-contribution"><span>MY PART</span><p>I built React Native screens for the mobile client and React dashboards for the web, sharing one role-based permission model, and backed them with queue-driven background jobs.</p></div><Link className="story-link" href="/work/dealership-toolkit/">Explore the Dealership Toolkit story <Icon name="arrow" /></Link><small className="story-disclosure">Real app screens captured with fictional data; client branding replaced.</small></div>
+          <DealershipArt />
+        </article>
         <div className="more-work">
           <Link href="/work/pv-rugs/"><span className="small-project-mark rugs-mark" aria-hidden="true">pv.</span><span><strong>PV Rugs</strong><small>QR tracking, payments & connected operations.</small></span><Icon name="arrow" /></Link>
-          <Link href="/work/dealership-toolkit/"><span className="small-project-mark crm-mark" aria-hidden="true"><Icon name="layers" /></span><span><strong>Dealership Toolkit</strong><small>Real-time dashboards & dependable backend jobs.</small></span><Icon name="arrow" /></Link>
         </div>
       </section>
 

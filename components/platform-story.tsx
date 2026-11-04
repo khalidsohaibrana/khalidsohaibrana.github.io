@@ -1,5 +1,33 @@
 const BASE = '/images/dealership-toolkit';
 
+/** Homepage art: the web dashboard with the React Native client overlapping it. */
+export function DealershipArt() {
+  return (
+    <div className="toolkit-story-art">
+      <span className="toolkit-title">
+        Web &amp; mobile
+        <strong>One platform.</strong>
+      </span>
+      <img
+        className="toolkit-web"
+        src={`${BASE}/web-visitors.webp`}
+        alt="Web dashboard listing identified shoppers with contact details and lead status"
+        width={1456}
+        height={816}
+        loading="lazy"
+      />
+      <img
+        className="toolkit-phone"
+        src={`${BASE}/mobile-dashboard.webp`}
+        alt="React Native app showing visitor and lead counters"
+        width={600}
+        height={1155}
+        loading="lazy"
+      />
+    </div>
+  );
+}
+
 /**
  * Three beats of the product story, one real screenshot each.
  *
@@ -34,6 +62,18 @@ const beats = [
   },
   {
     n: '03',
+    label: 'AUTOMATE',
+    surface: 'Web dashboard',
+    title: 'Follow-up that runs without anyone remembering.',
+    body: 'Campaigns are composed once per tenant, then the queue engine sends them on schedule and records what was delivered, opened and replied to.',
+    img: `${BASE}/web-automations.webp`,
+    alt: 'Campaign automation list showing workflows with type, status and state',
+    width: 1456,
+    height: 816,
+    portrait: false,
+  },
+  {
+    n: '04',
     label: 'CONVERT',
     surface: 'Web dashboard',
     title: 'Interest becomes a booked appointment.',

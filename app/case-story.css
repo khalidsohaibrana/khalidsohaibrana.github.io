@@ -86,3 +86,70 @@
     max-height: 460px;
   }
 }
+
+/* Homepage: Dealership Toolkit story art — web screen with the phone on top.
+   Mirrors the footprint of .cleanhaus-story-art so the stories stay aligned. */
+.toolkit-story-art {
+  height: 525px;
+  background: #101822;
+  border-radius: 28px 100px 28px 28px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.toolkit-title {
+  position: absolute;
+  top: 36px;
+  left: 32px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9fb0c4;
+}
+.toolkit-title strong {
+  font-family: var(--display);
+  font-size: 32px;
+  font-weight: 480;
+  letter-spacing: -0.03em;
+  text-transform: none;
+  color: #fff;
+}
+.toolkit-web {
+  position: absolute;
+  top: 150px;
+  left: 30px;
+  width: 86%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 24px 50px #00000055;
+}
+.toolkit-phone {
+  position: absolute;
+  right: 26px;
+  bottom: -46px;
+  width: 142px;
+  height: auto;
+  border-radius: 18px;
+  border: 3px solid #1b2634;
+  box-shadow: 0 20px 40px #00000066;
+}
+
+@media (max-width: 1040px) {
+  .toolkit-story-art { height: 510px; }
+  .toolkit-title strong { font-size: 28px; }
+}
+@media (max-width: 860px) {
+  .toolkit-story-art { width: 100%; max-width: 520px; margin-inline: auto; }
+  .story-toolkit .story-copy { grid-row: 1; }
+}
+@media (max-width: 560px) {
+  .toolkit-story-art { height: 430px; border-radius: 23px 65px 23px 23px; }
+  .toolkit-title { left: 25px; }
+  .toolkit-title strong { font-size: 27px; }
+  .toolkit-web { top: 135px; left: 20px; }
+  .toolkit-phone { width: 112px; right: 18px; }
+}
